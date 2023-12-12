@@ -15,7 +15,6 @@ const ContextProviderForAudio = ({ children }) => {
   const clickAudio = (clickAudioTrackArgument) => {
     console.log(clickAudioTrackArgument.id);
     if (currentTrack.id !== clickAudioTrackArgument.id) {
-      // currentTrack ?= clickAudioTrackArgument?
       // когда мы нажимаем на другое воспроизведение у нас будет воспроизводиься другая песня
       setCurrentTrack(clickAudioTrackArgument);
       setPlaying(true);
@@ -28,7 +27,6 @@ const ContextProviderForAudio = ({ children }) => {
       return; // Чтобы логика одного if не перекликалась с другим if мы вызываем return
     }
     if (playing) {
-      // как эти два условия связаны
       audioTracks.pause();
       setPlaying(false);
     } else {
